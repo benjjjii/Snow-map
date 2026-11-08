@@ -3,7 +3,7 @@
 A zoomable map of current snow depth across Europe, built as a single static page (`index.html`).
 
 - **Data:** [Open-Meteo DWD ICON API](https://open-meteo.com/en/docs/dwd-api) (`current=snow_depth,temperature_2m`). Over Europe this is ICON-EU at about 7 km resolution. No API key needed.
-- **Map:** [Leaflet](https://leafletjs.com/) with CARTO light basemap tiles. Place labels are drawn on top of the snow layer.
+- **Map:** [Leaflet](https://leafletjs.com/) with the free Esri Light Gray Canvas basemap (no key needed). Place labels are drawn on top of the snow layer.
 
 ## How it works
 

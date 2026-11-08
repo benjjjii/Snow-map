@@ -50,17 +50,18 @@
     maxBounds: [[EUROPE.south - 8, EUROPE.west - 15], [EUROPE.north + 8, EUROPE.east + 15]],
     preferCanvas: true,
   });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap contributors &copy; CARTO | Weather data: <a href="https://open-meteo.com/">Open-Meteo</a> (DWD ICON)',
-    subdomains: 'abcd', maxZoom: 19,
+  const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
+  L.tileLayer(ESRI + 'World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Basemap &copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors | Weather data: <a href="https://open-meteo.com/">Open-Meteo</a> (DWD ICON)',
+    maxZoom: 16,
   }).addTo(map);
 
   // Labels on top of the snow layer so place names stay readable
   map.createPane('labels');
   map.getPane('labels').style.zIndex = 650;
   map.getPane('labels').style.pointerEvents = 'none';
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
-    subdomains: 'abcd', pane: 'labels', maxZoom: 19,
+  L.tileLayer(ESRI + 'World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+    pane: 'labels', maxZoom: 16,
   }).addTo(map);
 
   // ---- Info / legend panel -------------------------------------------------
